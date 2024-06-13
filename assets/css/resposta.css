@@ -1,0 +1,28 @@
+.resposta-group {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 1em 0.5em;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    background-color: white;
+    margin: 0 2em;
+    color: #007BFF;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+input[type="radio"]:checked + .button {
+    background-color: #007BFF;
+    color: white;
+}

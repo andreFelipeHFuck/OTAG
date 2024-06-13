@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logic+ - MVP</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -30,22 +30,17 @@
         </div>
 
         <div class="atividade__resposta">
-            <form action="" method="post" class="respota">
-                <input type="radio" name="resposta" id="opcao1" value="1">
-                <input type="radio" name="resposta" id="opcao2" value="2">
-                <input type="radio" name="resposta" id="opcao3" value="3">
-
-                <button class="respota__button">
-
-                </button>
-
-                <button class="respota__button">
+            <form action="" method="post" class="resposta">
+                <div class="resposta-group">
+                    <input type="radio" id="option1" name="option" value="1">
+                    <label for="option1" class="button"> \( \overline{A \cup B} \) </label>
                     
-                </button>
-
-                <button class="respota__button">
+                    <input type="radio" id="option2" name="option" value="2">
+                    <label for="option2" class="button"> \( \overline{A \cap B} \) </label>
                     
-                </button>
+                    <input type="radio" id="option3" name="option" value="3">
+                    <label for="option3" class="button"> \( A \cap B  \) </label>
+                </div>
 
                 <input type="submit" value="Continuar">
             </form>
@@ -53,6 +48,7 @@
     </main>
 
 
-
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
