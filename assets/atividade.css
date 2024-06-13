@@ -1,0 +1,15 @@
+.atividade{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+}
+
+.atividade__pergunta{
+    margin: 0;
+}
+
+.atividade__resposta{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

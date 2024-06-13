@@ -1,0 +1,12 @@
+@import url(atividade.css);
+@import url(pergunta.css);
+
+:root{
+
+}
+
+body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
