@@ -1,3 +1,19 @@
 .pergunta{
-    /* display: flex; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 3em 2em 0 2em ;
 }
+
+.pergunta__texto{
+    text-align: center;
+    color: var(--white);
+    font-size: 22px;
+    margin-bottom: 1em;
+}
+
+.pergunta__imagem{
+    width: 100%;
+    height: 100%;
+}
+

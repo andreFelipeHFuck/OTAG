@@ -1,7 +1,7 @@
 .atividade{
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 4em;
 }
 
 .atividade__pergunta{

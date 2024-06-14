@@ -1,8 +1,13 @@
+.resposta{
+    display: flex;
+    flex-direction: column;
+}
+
 .resposta-group {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 input[type="radio"] {
@@ -11,18 +16,39 @@ input[type="radio"] {
 
 .button {
     display: inline-block;
-    padding: 1em 0.5em;
-    border: 2px solid #007BFF;
-    border-radius: 5px;
-    background-color: white;
-    margin: 0 2em;
-    color: #007BFF;
+    padding: 0.5em 0.5em;
+    border: 2px solid var(--purple);
+    border-radius: 15px;
+    box-shadow: 1px 1px;
+    background-color: var(--white);
+    margin: 0 2.5em;
+    color: var(--purple-dark);
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     text-align: center;
+    
 }
 
 input[type="radio"]:checked + .button {
-    background-color: #007BFF;
+    background-color: var(--purple-dark);
     color: white;
 }
+
+.resposta__submit{
+    margin-top: 3.5em;  /*1em; */
+    display: flex;
+    justify-content: center;
+}
+
+.resposta__submit__button{
+    background-color: var(--green);
+    border-radius: 15px;
+    padding: 0.5em 4em;
+    border: none;
+    color: var(--white);
+    font-size: 25px;
+
+    display: block;
+}
+

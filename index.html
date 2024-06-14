@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logic+ - MVP</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -30,25 +35,47 @@
         </div>
 
         <div class="atividade__resposta">
-            <form action="" method="post" class="resposta">
+            <form action="" method="post" class="resposta" data-form>
                 <div class="resposta-group">
-                    <input type="radio" id="option1" name="option" value="1">
+                    <input type="radio" id="option1" name="option" value="1" data-option>
                     <label for="option1" class="button"> \( \overline{A \cup B} \) </label>
                     
-                    <input type="radio" id="option2" name="option" value="2">
+                    <input type="radio" id="option2" name="option" value="2" data-option>
                     <label for="option2" class="button"> \( \overline{A \cap B} \) </label>
                     
-                    <input type="radio" id="option3" name="option" value="3">
+                    <input type="radio" id="option3" name="option" value="3" data-option>
                     <label for="option3" class="button"> \( A \cap B  \) </label>
                 </div>
 
-                <input type="submit" value="Continuar">
+                <div class="resposta__submit">
+                    <input type="submit" value="Continuar" class="resposta__submit__button">
+                </div>
+
+                <div class="feedback">
+                    <div class="feedback__card">
+
+                        <h3 class="feedback__resposta">
+                            Correto!
+                        </h3>
+
+                        <p class="feedback__texto">
+                            O conjunto \( A \cap B  \)
+                        </p>
+    
+                        <a href="#" class="feedback__link">Continuar</a>
+                    </div>
+                </div>
             </form>
         </div>
     </main>
 
+    <audio src="assets/sound/duolingo-correct-sound-made-with-Voicemod.mp3" id="som-acerto"></audio>
+    <audio src="assets/sound/duolingo-wrong-sound-made-with-Voicemod.mp3" id="som-erro"></audio>
+
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script type="module" src="main.js"></script>
 </body>
 </html>

@@ -1,13 +1,26 @@
 @import url(atividade.css);
 @import url(pergunta.css);
 @import url(resposta.css);
+@import url(feedback.css);
 
 :root{
+    --background-color: #396792;
+    --green: #55d7b3;
+    --green-dark: #2b8780;
+    --purple: #afa3f6ff;
+    --purple-dark: #7973dfff;
+    --red: #cc2d6fff;
+    --blue: #4577c9ff;
+    --white: #fff;
 
+    --main-font: "DM Sans", sans-serif;
 }
 
 body{
+    background-color: var(--background-color);
     align-items: center;
     display: flex;
     justify-content: center;
+    font-family: var(--main-font);
+    font-size: 10px;
 }
