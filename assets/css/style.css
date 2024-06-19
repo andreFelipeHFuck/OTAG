@@ -2,6 +2,7 @@
 @import url(pergunta.css);
 @import url(resposta.css);
 @import url(feedback.css);
+@import url(barra-progresso.css);
 
 :root{
     --background-color: #396792;
@@ -20,6 +21,7 @@ body{
     background-color: var(--background-color);
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     font-family: var(--main-font);
     font-size: 10px;

@@ -1,0 +1,17 @@
+{
+    "perguntas":[
+        {
+            "_id": 1,
+            "enunciado": "Qual conjunto representa o diagrama?",
+            "url_imagem": "images/venn.png",
+            "respostas": [
+                "\\( \\overline{A \\cup B} \\)",
+                "\\( \\overline{A \\cap B} \\)",
+                "\\( A \\cap B  \\)"
+            ],
+            "resposta": 2
+        }
+        
+
+    ]
+}

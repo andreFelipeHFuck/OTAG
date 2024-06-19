@@ -1,0 +1,16 @@
+.menu{
+    margin-top: 1em;
+}
+
+.barra-progresso{
+    display: flex;
+    gap: 5px;
+}
+
+.barra-progresso__barra{
+    background-color: gray;
+    border: 1px solid #000;
+    height: 2em;
+    width: 11em;
+}
+
