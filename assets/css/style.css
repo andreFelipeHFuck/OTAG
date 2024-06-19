@@ -3,6 +3,7 @@
 @import url(resposta.css);
 @import url(feedback.css);
 @import url(barra-progresso.css);
+@import url(conclusao.css);
 
 :root{
     --background-color: #396792;

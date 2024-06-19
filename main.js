@@ -1,6 +1,7 @@
-const barra1 = document.querySelector('#barra1');
-const barra2 = document.querySelector('#barra2');
-const barra3 = document.querySelector('#barra3');
+const menu = document.querySelector('.menu');
+const atividade = document.querySelector('.atividade');
+
+const barras = document.querySelectorAll('.barra');
 
 const pergunta_texto = document.querySelector('.pergunta__texto');
 const pergunta_imagem = document.querySelector('.pergunta__imagem');
@@ -13,16 +14,20 @@ const feedback = document.querySelector('.feedback');
 const feedback_card = document.querySelector('.feedback__card');
 const feedback_resposta = document.querySelector('.feedback__resposta');
 const feedback_texto = document.querySelector('.feedback__texto');
+const feedback_link = document.querySelector('.feedback__link');
+
+const conclusao = document.querySelector('.conclusao');
+const conclusao_pontuacao = document.querySelector('.conclusao__pontuacao');
+const conclusao_barras = document.querySelectorAll('.conclusao-barra');
 
 
+let estado = 0;
+
+let acertos = [false, false, false];
 
 let resposta;
 
 let listaDePerguntas;
-
-function escolhePergunta(perguntas){
-    return perguntas[0];
-}
 
 function constroiPergunta(pergunta){
     pergunta_texto.innerHTML = pergunta.enunciado;
@@ -40,14 +45,53 @@ function constroiPergunta(pergunta){
     resposta = pergunta.resposta + 1;
 }
 
-fetch("dados.json").then((response) => {
-    response.json().then((dados) =>{
-        listaDePerguntas = dados.perguntas;
-        console.log(listaDePerguntas[0]);
-        constroiPergunta(listaDePerguntas[0]);
-    })
-})
+async function lePerguntas(){
+    try{
 
+        const perguntas = [];
+
+        const response = await fetch("dados.json");
+        const dados = await response.json();
+
+        dados.perguntas.forEach(item => {
+            perguntas.push(item);
+        });
+
+        return perguntas;
+
+    } catch (error){
+        console.log("Erro ao carregar ou processar o arquivo JSON: ", error);
+    }
+}
+
+function coloreBarras(){
+    console.log(conclusao_barras);
+
+    let cont = 0;
+    for(let barra of conclusao_barras){
+        console.log(barra);
+
+        if(acertos[cont] === true){
+            barra.style.background = "var(--green)"
+        }else{
+            barra.style.background = "var(--red)"
+        }
+
+        cont++;
+    }
+}
+
+function calculaPontos(){
+    let count = 0;
+
+    for(let a of acertos){
+        if(a === true){
+            count++;
+        }
+    }
+
+    return Number.parseInt((100 * count) / 3);
+}
 
 function tocaSomAcerto(){
     document.querySelector('#som-acerto').play();
@@ -56,6 +100,15 @@ function tocaSomAcerto(){
 function tocaSomErro(){
     document.querySelector('#som-erro').play();
 }
+
+function tocaSomConclusao(){
+    document.querySelector('#som-conclusao').play();
+}
+
+
+conclusao.style.display = "none";
+listaDePerguntas =  await lePerguntas();
+console.log(listaDePerguntas);
 
 formulario.addEventListener('submit', (evento) => {
     evento.preventDefault();
@@ -70,6 +123,8 @@ formulario.addEventListener('submit', (evento) => {
 
         feedback_texto.innerHTML = 'O conjunto \\( A \\cap B  \\)'
         MathJax.typesetPromise([feedback_texto]).catch((err) => console.log(err.message));
+
+        acertos[estado] = true;
         tocaSomAcerto();
     }else{
         submit.style.display = "none";
@@ -79,10 +134,36 @@ formulario.addEventListener('submit', (evento) => {
 
         feedback_texto.innerHTML = `A respota correta era \\( A \\cap B  \\)`
         MathJax.typesetPromise([feedback_texto]).catch((err) => console.log(err.message));
+
+        acertos[estado] = false;
         tocaSomErro();
     }
 
-    barra1.style.background = "var(--green)";
-
-    console.log(form_resposta);
+    barras[estado].style.background = "var(--green)";
 })
+
+feedback_link.addEventListener('click', (evento) => {
+    if(estado < 2){
+        formulario.reset();
+        estado++;
+        console.log(listaDePerguntas[estado]);
+        constroiPergunta(listaDePerguntas[estado]);
+        console.log(estado);
+        submit.style.display = "flex";
+        feedback.style.display = "none";
+    }else{
+        atividade.style.display = "none";
+        menu.style.display = "none";
+        conclusao.style.display = "flex";
+
+
+        conclusao_pontuacao.innerHTML = calculaPontos() + "XP";
+        coloreBarras();
+
+        tocaSomConclusao();
+
+        console.log(acertos);
+    }
+})
+
+constroiPergunta(listaDePerguntas[estado])

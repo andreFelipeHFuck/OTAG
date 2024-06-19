@@ -1,0 +1,54 @@
+.conclusao{
+    margin-top: 14em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.conclusa__texto{
+    color: var(--white);
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+}
+
+.conclusao__pontuacao{
+    
+    color: var(--white);
+    font-size: 20px;
+    text-align: center;
+}
+
+.conclusao__barra-progresso{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conclusao-barra{
+    background-color: gray;
+    border: 1px solid #000;
+    height: 1.5em;
+    width: 7em;
+    margin-bottom: 2em;
+}
+
+.conclusao__trofeu{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 25em;
+}
+
+.conclusao__link{
+    background-color: var(--green);
+    border: 1px solid var(--white);
+    border-radius: 15px;
+    text-decoration: none;
+    padding: 0.5em;
+    margin-right: 1em;
+    margin-left: 1em;
+    color: var(--white);
+    font-size: 30px;
+    text-align: center;
+}

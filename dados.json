@@ -3,13 +3,35 @@
         {
             "_id": 1,
             "enunciado": "Qual conjunto representa o diagrama?",
-            "url_imagem": "images/venn.png",
+            "url_imagem": "images/questao0.png",
             "respostas": [
                 "\\( \\overline{A \\cup B} \\)",
                 "\\( \\overline{A \\cap B} \\)",
                 "\\( A \\cap B  \\)"
             ],
             "resposta": 2
+        },
+        {
+            "_id": 2,
+            "enunciado": "Pergunt2",
+            "url_imagem": "images/questao1.webp",
+            "respostas": [
+                "\\( \\overline{A \\cup B} \\)",
+                "\\( \\overline{A \\cap B} \\)",
+                "\\( A \\cap B  \\)"
+            ],
+            "resposta": 1
+        },
+        {
+            "_id": 3,
+            "enunciado": "Pergunta3",
+            "url_imagem": "images/questao1.webp",
+            "respostas": [
+                "\\( \\overline{A \\cup B} \\)",
+                "\\( \\overline{A \\cap B} \\)",
+                "\\( A \\cap B  \\)"
+            ],
+            "resposta": 0
         }
         
 

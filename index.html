@@ -16,59 +16,85 @@
 
     <header class="menu">
         <div class="barra-progresso">
-            <div class="barra-progresso__barra" id="barra1"></div>
-            <div class="barra-progresso__barra" id="barra2"></div>
-            <div class="barra-progresso__barra" id="barra3"></div>
+            <div class="barra-progresso__barra barra"></div>
+            <div class="barra-progresso__barra barra"></div>
+            <div class="barra-progresso__barra barra"></div>
         </div>
 
     </header>
+
+    <main class="atividades">
+        <div class="atividade" id="estado-0">
+            <div class="atividade__pergunta">
+                <figure class="pergunta">
+                    <h1 class="pergunta__texto"></h1>
+                    <img src="" alt="Diagrama de Venn exercício" class="pergunta__imagem">
+                        
+                </figure>
+            </div>
     
-    <main class="atividade">
-        <div class="atividade__pergunta">
-            <figure class="pergunta">
-                <h1 class="pergunta__texto"></h1>
-                <img src="" alt="Diagrama de Venn exercício" class="pergunta__imagem">
-                    
-            </figure>
-        </div>
-
-        <div class="atividade__resposta">
-            <form action="" method="post" class="resposta" data-form>
-                <div class="resposta-group">
-                    <input type="radio" id="option1" name="option" value="1" data-option>
-                    <label for="option1" class="button"></label>
-                    
-                    <input type="radio" id="option2" name="option" value="2" data-option>
-                    <label for="option2" class="button"></label>
-                    
-                    <input type="radio" id="option3" name="option" value="3" data-option>
-                    <label for="option3" class="button"></label>
-                </div>
-
-                <div class="resposta__submit">
-                    <input type="submit" value="Continuar" class="resposta__submit__button">
-                </div>
-
-                <div class="feedback">
-                    <div class="feedback__card">
-
-                        <h3 class="feedback__resposta">
-                            Correto!
-                        </h3>
-
-                        <p class="feedback__texto">
-                            O conjunto \( A \cap B  \)
-                        </p>
-    
-                        <a href="#" class="feedback__link">Continuar</a>
+            <div class="atividade__resposta">
+                <form action="" method="post" class="resposta" data-form>
+                    <div class="resposta-group">
+                        <input type="radio" id="option1" name="option" value="1" data-option>
+                        <label for="option1" class="button button-0"></label>
+                        
+                        <input type="radio" id="option2" name="option" value="2" data-option>
+                        <label for="option2" class="button button-0"></label>
+                        
+                        <input type="radio" id="option3" name="option" value="3" data-option>
+                        <label for="option3" class="button button-0"></label>
                     </div>
-                </div>
-            </form>
+    
+                    <div class="resposta__submit">
+                        <input type="submit" value="Continuar" class="resposta__submit__button">
+                    </div>
+    
+                    <div class="feedback">
+                        <div class="feedback__card">
+    
+                            <h3 class="feedback__resposta"></h3>
+    
+                            <p class="feedback__texto"></p>
+        
+                            <button class="feedback__link">Continuar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 
+    <div class="conclusao">
+        <h2 class="conclusa__texto">
+            Atividade Concluída!
+        </h2>
+
+        <p class="conclusao__pontuacao">
+            +40 XP
+        </p>
+
+        <p class="conclusao__porcentagem">
+
+        </p>
+
+        <img src="./images/trofeu.png" alt="" class="conclusao__trofeu">
+
+      
+        <div class="barra-progresso conclusao__barra-progresso">
+            <div class="barra-progresso__barra conclusao-barra"></div>
+            <div class="barra-progresso__barra conclusao-barra"></div>
+            <div class="barra-progresso__barra conclusao-barra"></div>
+        </div>
+
+        <a href="" class="conclusao__link">Continuar</a>
+    
+    </div>
+    
+
     <audio src="assets/sound/duolingo-correct-sound-made-with-Voicemod.mp3" id="som-acerto"></audio>
     <audio src="assets/sound/duolingo-wrong-sound-made-with-Voicemod.mp3" id="som-erro"></audio>
+    <audio src="assets/sound/duolingo-lesson-complete.mp3" id="som-conclusao"></audio>
 
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
