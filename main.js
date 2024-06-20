@@ -93,6 +93,19 @@ function calculaPontos(){
     return Number.parseInt((100 * count) / 3);
 }
 
+function listaDePerguntasAleatorios(){
+    let i = listaDePerguntas.length;
+    let j;
+    let temp;
+
+    while(--i > 0) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = listaDePerguntas[j];
+        listaDePerguntas[j] = listaDePerguntas[i];
+        listaDePerguntas[i] = temp;
+    }
+}
+
 function tocaSomAcerto(){
     document.querySelector('#som-acerto').play();
 }
@@ -107,8 +120,13 @@ function tocaSomConclusao(){
 
 
 conclusao.style.display = "none";
+
 listaDePerguntas =  await lePerguntas();
-console.log(listaDePerguntas);
+listaDePerguntasAleatorios();
+
+constroiPergunta(listaDePerguntas[estado])
+
+listaDePerguntas = listaDePerguntas.slice(0, 3);
 
 formulario.addEventListener('submit', (evento) => {
     evento.preventDefault();
@@ -157,7 +175,7 @@ feedback_link.addEventListener('click', (evento) => {
         conclusao.style.display = "flex";
 
 
-        conclusao_pontuacao.innerHTML = calculaPontos() + "XP";
+        conclusao_pontuacao.innerHTML = calculaPontos() + " XP";
         coloreBarras();
 
         tocaSomConclusao();
@@ -166,4 +184,3 @@ feedback_link.addEventListener('click', (evento) => {
     }
 })
 
-constroiPergunta(listaDePerguntas[estado])
