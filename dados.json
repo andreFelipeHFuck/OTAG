@@ -16,7 +16,7 @@
             "enunciado": "Qual é a opção que define a área escura da imagem?",
             "url_imagem": "images/questao4.webp",
             "respostas": [
-                "\\( (B - C) + ((A \\cap C) - B))  \\) ",
+                "\\( (B - C) \\cup ((A \\cap C) - B))  \\) ",
                 "\\( \\overline{A \\cup B} \\)",
                 "\\( \\overline{A \\cap B} \\)"
             ],

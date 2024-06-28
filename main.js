@@ -161,7 +161,9 @@ formulario.addEventListener('submit', (evento) => {
 })
 
 feedback_link.addEventListener('click', (evento) => {
-    if(estado < 2){
+    console.log(estado);
+
+    if(estado < 3){
         formulario.reset();
         estado++;
         console.log(listaDePerguntas[estado]);
@@ -179,8 +181,6 @@ feedback_link.addEventListener('click', (evento) => {
         coloreBarras();
 
         tocaSomConclusao();
-
-        console.log(acertos);
     }
 })
 
