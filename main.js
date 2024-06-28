@@ -139,7 +139,7 @@ formulario.addEventListener('submit', (evento) => {
         feedback_card.style.background = "var(--green-dark)";
         feedback_resposta.textContent = "Correto!"
 
-        feedback_texto.innerHTML = 'O conjunto \\( A \\cap B  \\)'
+        feedback_texto.innerHTML = `O conjunto ${listaDePerguntas[estado].respostas[listaDePerguntas[estado].resposta]}`
         MathJax.typesetPromise([feedback_texto]).catch((err) => console.log(err.message));
 
         acertos[estado] = true;
@@ -150,7 +150,7 @@ formulario.addEventListener('submit', (evento) => {
         feedback_card.style.background = "var(--red)";
         feedback_resposta.textContent = "Errado!"
 
-        feedback_texto.innerHTML = `A respota correta era \\( A \\cap B  \\)`
+        feedback_texto.innerHTML = `A respota correta era ${listaDePerguntas[estado].respostas[listaDePerguntas[estado].resposta]}`
         MathJax.typesetPromise([feedback_texto]).catch((err) => console.log(err.message));
 
         acertos[estado] = false;
